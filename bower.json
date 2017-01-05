@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Luke Hammond <luke.john.hammond@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lukejohnhammond/portfolio",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
