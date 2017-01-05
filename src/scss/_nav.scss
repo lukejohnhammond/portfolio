@@ -1,0 +1,96 @@
+// Nav check
+
+.navCheck {
+  position: static;
+  top: 100px;
+  right: 100px;
+
+  z-index: 10;
+}
+
+// inputs
+
+#home:checked ~ .holder {
+  top: 0;
+  left: -100vw;
+}
+
+#blog:checked ~ .holder {
+  top: 0;
+  left: -200vw;
+}
+
+#about:checked ~ .holder {
+  top: 0;
+  left: 0vw;
+}
+
+#work:checked ~ .holder {
+  top: -100vh;
+  left: -100vw;
+}
+
+
+// labels
+
+.navUp {
+  position: absolute;
+  left: 50vw;
+  top: 40px;
+
+  &:after {
+    @extend .triangle;
+
+    position: absolute;
+    top: -30px;
+    left: calc(50% - 10px);
+  }
+}
+
+.navRight {
+  position: absolute;
+  right: 40px;
+  top: 50vh;
+
+  &:after {
+    @extend .triangle;
+
+    position: absolute;
+    right: -30px;
+    top: calc(50% - 5px);
+
+    transform: rotate(90deg);
+  }
+}
+
+.navDown {
+  position: absolute;
+  left: 50vw;
+  bottom: 40px;
+
+  &:after {
+    @extend .triangle;
+
+    position: absolute;
+    bottom: -30px;
+    left: calc(50% - 10px);
+
+    transform: rotate(180deg);
+  }
+}
+
+.navLeft {
+  position: absolute;
+  left: 40px;
+  top: 50vh;
+
+  &:after {
+    @extend .triangle;
+
+    position: absolute;
+    left: -30px;
+    top: calc(50% - 5px);
+
+    transform: rotate(-90deg);
+  }
+}

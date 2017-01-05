@@ -1,0 +1,17 @@
+
+// Colors
+
+$white: rgba(255, 255, 255, 1);
+
+// triangle
+
+.triangle {
+  height: 0;
+  width: 0;
+
+  content: '';
+
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid $white;
+}

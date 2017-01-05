@@ -11,23 +11,34 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
   <body>
+    <input id="blog" name="nav" type="radio" class="navCheck" />
+    <input id="home" name="nav" type="radio" class="navCheck" />
+    <input id="work" name="nav" type="radio" class="navCheck" />
+    <input id="about" name="nav" type="radio" class="navCheck" />
+
     <div class="holder">
         <div class="social">
           <a href="#">GitHub</a> <a href="#">Linked in</a> <a href="#">Twitter</a>
         </div>
         <div id="homeSlide" class="page">
-            <h1>Loading...</h1>
+            <h1>Luke John Hammond</h1>
+            <label for="blog" class="navRight">Blog</label>
+            <label for="work" class="navDown">work</label>
+            <label for="about" class="navLeft">About</label>
         </div>
 
         <div id="blogSlide" class="page">
             <h1>Loading...</h1>
+            <label for="home" class="navLeft">Home</label>
         </div>
 
         <div id="workSlide" class="page">
+            <label for="home" class="navUp">Home</label>
             <h1>Loading...</h1>
         </div>
 
         <div id="aboutSlide" class="page">
+            <label for="home" class="navRight">Home</label>
             <h1>Loading...</h1>
         </div>
     </div>

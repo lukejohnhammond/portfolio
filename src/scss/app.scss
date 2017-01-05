@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -19,9 +21,9 @@ h1, h2, h3, h4 {
 }
 
 body {
-  // overflow: hidden;
-  // max-height:  100vh;
-  // max-width: 100vw;
+  overflow: hidden;
+  max-height:  100vh;
+  max-width: 100vw;
 }
 
 .page {
@@ -33,9 +35,15 @@ body {
 .holder {
   height: 300vh;
   width: 300vw;
-  overflow: scroll;
+
+  position: absolute;
+  left: -100vw;
+  top: 0;
+
+  transition: all 1s;
 }
 
+@import '_nav.scss';
 
 .blog {
   margin: auto;
