@@ -41,18 +41,33 @@ body {
   top: 0;
 
   transition: all 1s;
+
+  &:after {
+    height: 0;
+    width: 0;
+
+    content: '';
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $white;
+
+    position: absolute;
+    right: -30px;
+    top: calc(50% - 5px);
+
+    transform: rotate(90deg);
+  }
 }
 
 @import '_nav.scss';
 
-.blog {
-  margin: auto;
-  width:70%;
+.social {
+  position: fixed;
+  top: 40px;
+  left: calc(50% - 50px);
 
-  article {
-    padding: 20px 0;
-    border-bottom: 1px solid #221100;
-  }
+  z-index: 100;
 }
 
 #homeSlide {
