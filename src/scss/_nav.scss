@@ -2,10 +2,8 @@
 
 .navCheck {
   position: static;
-  top: 100px;
-  right: 100px;
-
-  z-index: 10;
+  top: -9999px;
+  right: -9999px;
 }
 
 // inputs
@@ -33,30 +31,43 @@
 
 // labels
 
+label[class^="nav"] {
+  color: #fff;
+  font-size: 20px;
+  line-height: 40px;
+  text-transform: lowercase;
+}
+
 .navUp {
+  width: 100px;
+
+  text-align: center;
+
   position: absolute;
-  left: 50vw;
-  top: 40px;
+  left: calc(50% - 50px);
+  top: 34px;
 
   &:after {
     @extend .triangle;
 
     position: absolute;
-    top: -30px;
-    left: calc(50% - 10px);
+    top: -13px;
+    left: calc(50% - 15px);
   }
 }
 
 .navRight {
+  height: 40px;
+
   position: absolute;
-  right: 40px;
-  top: 50vh;
+  right: 70px;
+  top: calc(50vh - 40px);
 
   &:after {
     @extend .triangle;
 
     position: absolute;
-    right: -30px;
+    right: -50px;
     top: calc(50% - 5px);
 
     transform: rotate(90deg);
@@ -64,8 +75,12 @@
 }
 
 .navDown {
+  width: 100px;
+
+  text-align: center;
+
   position: absolute;
-  left: 50vw;
+  left: calc(50% - 50px);
   bottom: 40px;
 
   &:after {
@@ -73,22 +88,24 @@
 
     position: absolute;
     bottom: -30px;
-    left: calc(50% - 10px);
+    left: calc(50% - 15px);
 
     transform: rotate(180deg);
   }
 }
 
 .navLeft {
+  height: 40px;
+
   position: absolute;
-  left: 40px;
-  top: 50vh;
+  left: 70px;
+  top: calc(50vh - 40px);
 
   &:after {
     @extend .triangle;
 
     position: absolute;
-    left: -30px;
+    left: -50px;
     top: calc(50% - 5px);
 
     transform: rotate(-90deg);

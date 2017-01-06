@@ -73,7 +73,7 @@ gulp.task('styles', () => {
 
 // images
 gulp.task('images', () => {
-  return gulp.src(['src/images/*.jpg', 'src/images/*.png', 'src/images/*.gif'])
+  return gulp.src(['src/images/*.jpg', 'src/images/*.png', 'src/images/*.gif', 'src/images/*.svg'])
     .pipe(gulp.dest('public/images'));
 });
 
