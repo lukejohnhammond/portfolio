@@ -216,11 +216,15 @@ article {
 }
 
 article.project {
-  width: 31%;
-  margin: 0 1%;
+  width: 30%;
+  margin: 0 1.5%;
   padding: 10px 0px;
 
   float: left;
+
+  a {
+    text-decoration: none;
+  }
 
   h4 {
     padding: 0 0 0 4px;
