@@ -98,6 +98,7 @@ gulp.task('nodemon', () => {
 gulp.task('watch', () => {
   livereload.listen();
   gulp.watch('src/**/*.html', ['html']);
+  gulp.watch(['src/images/*.jpg', 'src/images/*.png', 'src/images/*.gif', 'src/images/*.svg'], ['images']);
   gulp.watch('src/**/*.js', ['scripts']);
   gulp.watch('src/**/*.scss', ['styles']);
   gulp.watch('src/**/*.jsx', ['jsx']);
