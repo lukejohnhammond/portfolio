@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const validator = require("validator");
 
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
@@ -47,6 +48,16 @@ userSchema
 
 userSchema.methods.validatePassword = validatePassword;
 
+
+userSchema
+  .path('email')
+  .validate(validateEmail);
+
+function validateEmail(email) {
+  if (!validator.isEmail(email)) {
+    return this.invalidate('email', 'must be a valid email address');
+  }
+}
 
 userSchema.set('toJSON', {
   transform: function(doc, json) {
