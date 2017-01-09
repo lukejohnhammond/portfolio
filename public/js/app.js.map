@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.js"],"names":[],"mappings":"AAAA","file":"app.js","sourcesContent":[]}
+{"version":3,"sources":["js/app.js"],"names":["angular","module"],"mappings":"YAAAA,SAAQC,OAAO","file":"app.js","sourcesContent":["angular.module('portfolio', []);\n"]}
