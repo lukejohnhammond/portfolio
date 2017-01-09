@@ -21,8 +21,6 @@ function secureRoute(req, res, next) {
   });
 }
 
-
-
 router.route('/register')
   .post(authController.register);
 
@@ -35,8 +33,8 @@ router.route('/blogs')
 
 router.route('/blogs/:id')
   .get(blogsController.show)
-  .put(blogsController.update)
-  .patch(blogsController.update)
-  .delete(blogsController.delete);
+  .put(secureRoute, blogsController.update)
+  .patch(secureRoute, blogsController.update)
+  .delete(secureRoute, blogsController.delete);
 
 module.exports = router;
