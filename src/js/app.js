@@ -23,6 +23,16 @@ function Router($stateProvider, $urlRouterProvider) {
           controllerAs: 'blogs'
         }
       }
+    })
+    .state('blogsCreate', {
+      url: '/blogs',
+      views: {
+        'blogs': {
+          templateUrl: '/templates/blogsIndex.html',
+          controller: 'BlogController',
+          controllerAs: 'blogs'
+        }
+      }
     });
   $urlRouterProvider.otherwise('/');
 }
