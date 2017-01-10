@@ -2,7 +2,7 @@
 <html ng-app="portfolio">
   <head>
     <meta charset="utf-8">
-    <title>Luke John Hammond</title>
+    <title> {{ $state.current.name }} - Luke John Hammond</title>
     <link rel="stylesheet" href="/css/app.css">
 
     <script src="/js/vendor.js"></script>
@@ -10,11 +10,14 @@
     <script src="https://use.typekit.net/hqt5smt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
-  <body>
-    <input id="blog" name="nav" type="radio" class="navCheck" />
-    <input id="home" name="nav" type="radio" class="navCheck" />
-    <input id="work" name="nav" type="radio" class="navCheck" />
-    <input id="about" name="nav" type="radio" class="navCheck" />
+
+  <body ng-controller="MainController as main">
+    HERE: {{ main.stateName }}
+
+    <input id="blog" name="nav" type="radio" class="navCheck" ng-model="main.stateName" value="blog" />
+    <input id="home" name="nav" type="radio" class="navCheck" ng-model="main.stateName" value="home"/>
+    <input id="work" name="nav" type="radio" class="navCheck" ng-model="main.stateName" value="work" />
+    <input id="about" name="nav" type="radio" class="navCheck" ng-model="main.stateName" value="abou" />
 
     <div class="holder">
         <div class="social">
@@ -31,19 +34,19 @@
         <img src="/images/triangle.svg" alt="Triangle" class="slash" />
 
         <div class="homeSlide page content">
-          <label for="blog" class="navRight">blog</label>
-          <label for="work" class="navDown">work</label>
-          <label for="about" class="navLeft">about</label>
+          <label for="blog" class="navRight" ui-sref="blogsIndex">blog</label>
+          <label for="work" class="navDown" ui-sref="workIndex">work</label>
+          <label for="about" class="navLeft" ui-sref="about">about</label>
         </div>
 
         <div class="homeSlide page">
         </div>
 
         <div class="blogSlide page content">
-          <div class="wrapper">
+          <div class="wrapper" ui-view="blogs">
 
           </div>
-          <label for="home" class="navLeft">Home</label>
+          <label for="home" class="navLeft" ui-sref="home">Home</label>
         </div>
         <div class="blogSlide page">
         </div>
@@ -76,7 +79,7 @@
               </a>
             </article>
           </div>
-          <label for="home" class="navUp">Home</label>
+          <label for="home" class="navUp" ui-sref="home">Home</label>
         </div>
         <div class="workSlide page">
         </div>
@@ -113,7 +116,7 @@
               <hr>
             </article>
           </div>
-          <label for="home" class="navRight">Home</label>
+          <label for="home" class="navRight" ui-sref="home">Home</label>
         </div>
         <div class="aboutSlide page">
         </div>
