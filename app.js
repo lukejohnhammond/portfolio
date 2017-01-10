@@ -1,11 +1,25 @@
-const express = require('express');
-const port = process.env.PORT || 8000;
-const app = express();
+const express     = require('express');
+const app         = express();
+const port        = process.env.PORT || 8000;
+const bodyParser  = require('body-parser');
+const mongoose    = require('mongoose');
+const routes      = require('./config/routes');
+const db          = require('./config/db');
 
-const router = express.Router();
+
+mongoose.connect(db.uri);
+
+const morgan = require('morgan');
+// user morgan for logging
+app.use(morgan('dev'));
+
+// Allow reading of HTTP requests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/api', routes);
 
 app.use(express.static(`${__dirname}/public`));
-app.use(router);
 
 app.listen(port, () => console.log(`Express is listening on port ${port}`));
 
