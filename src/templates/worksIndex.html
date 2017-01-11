@@ -1,6 +1,5 @@
-THIS IS WORK! Yes?
-<article ng-repeat="article in worksIndex.works">
-  <h2>{{ article.title }} - <small>{{ article.createdAt }}</small></h2>
+<article ng-repeat="article in worksIndex.works" class="project">
+  <h2>{{ article.title }}</h2>
+  <img ng-src="article.heroImage.src" alt="{{ article.heroImage.caption }}" />
   <a ui-sref="workShow({ id: article._id })">View</a>
-  <a ui-sref="workEdit({ id: article._id })">Edit Work</a>
 </article>
