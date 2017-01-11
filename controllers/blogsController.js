@@ -10,6 +10,7 @@ function blogsIndex(req, res) {
 }
 
 function blogsCreate(req, res) {
+  console.log(req.body);
   Blog.create(req.body.blog, (err, blog) => {
     if (err) return res.status(500).json({ success: false, message: err });
     if (!blog) return res.status(500).json({ sucess: false, message: 'Please send the correct information to create a blog entry'});

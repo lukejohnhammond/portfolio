@@ -39,7 +39,7 @@ gulp.task('bower:css', () => {
 
 // scripts
 gulp.task('scripts', () => {
-  return gulp.src('src/**/*.js')
+  return gulp.src('src/js/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(babel({
@@ -55,6 +55,27 @@ gulp.task('scripts', () => {
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('public/js'))
+    .pipe(livereload());
+});
+
+// scripts
+gulp.task('adminScripts', () => {
+  return gulp.src('src/admin/**/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(plumber())
+    .pipe(babel({
+      presets: ['es2015'],
+      compact: true
+    }))
+    .pipe(flatten())
+    .pipe(order([
+      'appAdmin.js',
+      '**/*.js'
+    ]))
+    .pipe(concat('appAdmin.js'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('public/admin/js'))
     .pipe(livereload());
 });
 
@@ -84,6 +105,14 @@ gulp.task('html', () => {
     .pipe(livereload());
 });
 
+// Admin html
+gulp.task('adminHtml', () => {
+  return gulp.src('src/admin/**/*.html')
+    .pipe(gulp.dest('public/admin'))
+    .pipe(livereload());
+});
+
+
 // nodemon
 gulp.task('nodemon', () => {
   return nodemon()
@@ -98,10 +127,12 @@ gulp.task('nodemon', () => {
 gulp.task('watch', () => {
   livereload.listen();
   gulp.watch('src/**/*.html', ['html']);
+  gulp.watch('src/admin/**/*.html', ['adminHtml']);
   gulp.watch(['src/images/*.jpg', 'src/images/*.png', 'src/images/*.gif', 'src/images/*.svg'], ['images']);
   gulp.watch('src/**/*.js', ['scripts']);
+  gulp.watch('src/admin/**/*.js', ['adminScripts']);
   gulp.watch('src/**/*.scss', ['styles']);
   gulp.watch('src/**/*.jsx', ['jsx']);
 });
 
-gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'styles', 'html', 'images'], 'watch', 'nodemon'));
+gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'adminScripts', 'styles', 'html', 'adminHtml', 'images'], 'watch', 'nodemon'));

@@ -1,0 +1,6 @@
+THIS IS WORK! Yes?
+<article ng-repeat="article in worksIndex.works">
+  <h2>{{ article.title }} - <small>{{ article.createdAt }}</small></h2>
+  <a ui-sref="workShow({ id: article._id })">View</a>
+  <a ui-sref="workEdit({ id: article._id })">Edit Work</a>
+</article>

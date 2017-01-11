@@ -5,6 +5,7 @@ const jwt       = require('jsonwebtoken');
 
 const authController = require('../controllers/authController');
 const blogsController = require('../controllers/blogsController');
+const worksController = require('../controllers/worksController');
 
 // middleware
 
@@ -14,7 +15,7 @@ function secureRoute(req, res, next) {
   const token = req.headers.authorization.replace('Bearer ', '');
 
   jwt.verify(token, secret, (err, payload) => {
-    if(err) return res.status(401).json({ message: "Invalid credentials, please try again."});
+    if(err) return res.status(401).json({ message: 'Invalid credentials, please try again.'});
     req.user = payload;
 
     next();
@@ -24,17 +25,27 @@ function secureRoute(req, res, next) {
 router.route('/register')
   .post(authController.register);
 
-router.route('/login')
+router.route('/auth/login')
   .post(authController.login);
 
-router.route('/blogs')
+router.route('/api/blogs')
   .get(blogsController.index)
-  .post(blogsController.create);
+  .post(secureRoute, blogsController.create);
 
-router.route('/blogs/:id')
+router.route('/api/blogs/:id')
   .get(blogsController.show)
   .put(secureRoute, blogsController.update)
   .patch(secureRoute, blogsController.update)
   .delete(secureRoute, blogsController.delete);
+
+router.route('/api/works')
+  .get(worksController.index)
+  .post(secureRoute, worksController.create);
+
+router.route('/api/works/:id')
+  .get(worksController.show)
+  .put(secureRoute, worksController.update)
+  .patch(secureRoute, worksController.update)
+  .delete(secureRoute, worksController.delete);
 
 module.exports = router;

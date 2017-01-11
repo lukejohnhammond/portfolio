@@ -8,9 +8,6 @@ function Router($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/'
     })
-    .state('workIndex', {
-      url: '/work'
-    })
     .state('about', {
       url: '/about'
     })
@@ -19,18 +16,18 @@ function Router($stateProvider, $urlRouterProvider) {
       views: {
         'blogs': {
           templateUrl: '/templates/blogsIndex.html',
-          controller: 'BlogController',
-          controllerAs: 'blogs'
+          controller: 'BlogsIndexController',
+          controllerAs: 'blogsIndex'
         }
       }
     })
-    .state('blogsCreate', {
-      url: '/blogs',
+    .state('worksIndex', {
+      url: '/works',
       views: {
-        'blogs': {
-          templateUrl: '/templates/blogsIndex.html',
-          controller: 'BlogController',
-          controllerAs: 'blogs'
+        'works': {
+          templateUrl: '/templates/worksIndex.html',
+          controller: 'WorksIndexController',
+          controllerAs: 'worksIndex'
         }
       }
     });

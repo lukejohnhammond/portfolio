@@ -1,8 +1,8 @@
 angular.module('portfolio')
-  .controller('BlogController', BlogController);
+  .controller('BlogsIndexController', BlogsIndexController);
 
-BlogController.$inject = ['$resource', 'Blog'];
-function BlogController($resource, Blog) {
+BlogsIndexController.$inject = ['$resource', 'Blog'];
+function BlogsIndexController($resource, Blog) {
   const blogsIndex = this;
 
   Blog.query(data => {

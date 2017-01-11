@@ -1,0 +1,11 @@
+<section>
+  <form id="login" ng-submit="workCreate.addArticle()">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" value="" ng-model="workCreate.work.title">
+    <label for="shortIntro">Short Intro:</label>
+    <input type="text" name="shortIntro" id="shortIntro" value="" ng-model="workCreate.work.shortIntro">
+    <label for="mainContent">Main Content:</label>
+    <textarea  name="mainContent" id="mainContent" ng-model="workCreate.work.mainContent"></textarea>
+    <input type="submit" name="" value="Save">
+  </form>
+</section>

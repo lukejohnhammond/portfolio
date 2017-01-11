@@ -1,0 +1,8 @@
+<article ng-repeat="article in blogsIndex.blogs">
+  {{ article}}
+  <h2>{{ article.title }} - <small>{{ article.createdAt }}</small></h2>
+  <a ui-sref="blogShow({ id: article._id })">View</a>
+  <a ui-sref="blogEdit({ id: article._id })">Edit Blog</a>
+</article>
+
+<a ui-sref="blogCreate">Add new</a>
