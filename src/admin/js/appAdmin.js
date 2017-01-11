@@ -1,7 +1,6 @@
 angular.module('admin', ['ngResource', 'ui.router', 'satellizer'])
   .config(Router);
 
-
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -22,6 +21,16 @@ function Router($stateProvider, $urlRouterProvider) {
           templateUrl: '/admin/templates/adminHome.html',
           controller: 'AdminHomeController',
           controllerAs: 'adminHome'
+        }
+      }
+    })
+    .state('imageUpload', {
+      url: '/imageUploader',
+      views: {
+        'admin': {
+          templateUrl: '/admin/templates/imageUploader.html',
+          controller: 'ImageUploaderController',
+          controllerAs: 'imageUploader'
         }
       }
     })
