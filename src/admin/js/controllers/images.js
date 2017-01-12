@@ -1,6 +1,9 @@
 angular.module('admin')
   .controller('ImageUploaderController', ImageUploaderController);
 
-ImageUploaderController.$inject = ['$resource'];
-function ImageUploaderController($resource) {
+ImageUploaderController.$inject = [];
+function ImageUploaderController() {
+  const upload = this;
+
+  upload.data = {};
 }

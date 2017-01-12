@@ -7,19 +7,32 @@ function dragdrop() {
     restrict: 'E',
     replace: true,
     templateUrl: 'templates/dragDrop.html',
+    scope: {
+      base64: '='
+    },
     link($scope, element) {
 
-      $scope.base64String = null;
+      $scope.base64 = null;
+      $scope.active = false;
 
       reader.onload = () => {
-        $scope.base64String = reader.result;
+        $scope.base64 = reader.result;
+        console.log(reader.result);
         $scope.$apply();
       };
 
       element
+        .on('dragover', () => {
+          $scope.active = true;
+          $scope.$apply();
+        })
         .on('dragover', (e) => {
           e.preventDefault();
           console.log('AGR');
+        })
+        .on('dragleave', () => {
+          $scope.active = false;
+          $scope.$apply();
         })
         .on('drop', (e) => {
           e.preventDefault();
