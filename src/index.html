@@ -2,7 +2,7 @@
 <html ng-app="portfolio">
   <head>
     <meta charset="utf-8">
-    <title> {{ $state.current.name }} - Luke John Hammond</title>
+    <title>Luke John Hammond</title>
     <link rel="stylesheet" href="/css/app.css">
 
     <script src="/js/vendor.js"></script>
@@ -12,7 +12,6 @@
   </head>
 
   <body ng-controller="MainController as main">
-    HERE: {{ main.stateName }}
 
     <input id="blog" name="nav" type="radio" class="navCheck" ng-model="main.stateName" value="blog" />
     <input id="home" name="nav" type="radio" class="navCheck" ng-model="main.stateName" value="home"/>
@@ -24,6 +23,7 @@
           <a href="https://github.com/lukejohnhammond/" target="_blank"><img src="/images/GitHub-Mark-Light-64px@30h.png" alt="GitHub" /></a>
           <a href="https://www.linkedin.com/in/lukejohnhammond/" target="_blank"><img src="/images/In-White-2in-TM30h.png" alt="Linked In" /></a>
           <a href="https://twitter.com/LukeJohnHammond" target="_blank"><img src="/images/Twitter_Logo_White_On_Image30h.png" alt="Twitter" /></a>
+          <a href="mailto:luke.john.hammond@gmail.com" ><img src="/images/mail.svg" alt="Email" height="30" /></a>
         </div>
 
         <header class="main">

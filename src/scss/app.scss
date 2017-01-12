@@ -17,8 +17,6 @@
   z-index: 20;
 }
 
-
-
 ul {
   list-style: disc;
   li {
@@ -96,7 +94,7 @@ body {
 @import '_nav.scss';
 
 .social {
-  width: 200px;
+  width: 240px;
 
   text-align: center;
 
@@ -113,7 +111,7 @@ body {
 
 #blog:checked , #about:checked, #work:checked {
   &~ .holder .social {
-    left: calc(50% + 410px);
+    left: calc(50% + 370px);
   }
 }
 
@@ -141,7 +139,10 @@ body {
   background-image: linear-gradient(45deg, #273582 0%, #0089C0 100%);
 
   .wrapper h2 {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
+
+    font-size: 20px;
+    letter-spacing: 3px;
   }
 }
 
@@ -177,6 +178,8 @@ body {
 
   opacity: 0;
   overflow: scroll;
+
+  text-align: center;
 
   * {
     text-align: center;
@@ -224,7 +227,7 @@ article.project {
   margin: 0 1.5%;
   padding: 10px 0px;
 
-  float: left;
+  display: inline-block;
 
   a {
     text-decoration: none;
@@ -239,4 +242,34 @@ article.project {
   img {
     width: 100%;
   }
+}
+
+
+// Quick Styles
+
+.hero {
+  width: 30%;
+  margin: 0 auto 20px auto;
+  display: block;
+
+  box-shadow: 0 0 6px 2px rgba(0,0,0,0.2);
+}
+
+.links {
+  width:200px;
+  margin: 20px auto 40px;
+  a {
+    display: inline-block;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+
+  text-decoration: none;
+
+  font-size: 30px;
+  font-weight: 700;
 }

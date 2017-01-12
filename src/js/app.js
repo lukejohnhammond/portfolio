@@ -30,6 +30,16 @@ function Router($stateProvider, $urlRouterProvider) {
           controllerAs: 'worksIndex'
         }
       }
+    })
+    .state('workShow', {
+      url: '/works/:id',
+      views: {
+        'works': {
+          templateUrl: '/templates/workShow.html',
+          controller: 'WorkShowController',
+          controllerAs: 'workShow'
+        }
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

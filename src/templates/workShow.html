@@ -1,0 +1,11 @@
+  <a ui-sref="worksIndex" class="close"> X </a>
+
+  <h2>{{ workShow.data.title }}</h2>
+  <p>{{ workShow.data.shortIntro }}</p>
+  <div class="links">
+    <a href="{{ workShow.data.gitHub }}" class="icon-gh">GitHub</a> - <a href="{{ workShow.data.liveLink }}" class="icon-demo">Demo</a>
+  </div>
+  <!-- <hr class="breaker"> -->
+    <img ng-src="{{ workShow.data.heroImage }}" alt="{{ project.heroImage.caption }}" class="hero" />
+  <!-- <hr class="breaker"> -->
+  <p>{{ workShow.data.mainContent }}</p>
