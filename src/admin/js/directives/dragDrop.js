@@ -9,8 +9,11 @@ function dragdrop() {
     templateUrl: 'templates/dragDrop.html',
     link($scope, element) {
 
+      $scope.base64String = null;
+
       reader.onload = () => {
-        console.log(reader.result);
+        $scope.base64String = reader.result;
+        $scope.$apply();
       };
 
       element
@@ -23,7 +26,6 @@ function dragdrop() {
           console.log('dropped');
 
           const files = (e.target.files || e.dataTransfer.files)[0];
-          console.log(files);
 
           reader.readAsDataURL(files);
         });
