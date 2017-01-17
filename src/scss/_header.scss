@@ -16,6 +16,7 @@ header.main {
 
     @media (max-width: 600px) {
       font-size: 30px;
+      text-align: center;
     }
   }
 
@@ -29,10 +30,14 @@ header.main {
     font-weight: 300;
     letter-spacing: 3px;
     line-height: 40px;
-  }
 
+    @media (max-width: 600px) {
+      font-size: 20px;
+    }
+  }
   @media (max-width: 600px) {
-    font-size: 20px;
+    top:calc(50vh - 80px);
+    left: 0;
   }
 }
 

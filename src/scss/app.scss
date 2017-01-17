@@ -93,7 +93,6 @@ body {
 
   z-index: 10;
   @media screen and (max-width: 1024px) {
-
     bottom: 0;
   }
 }
@@ -115,6 +114,9 @@ body {
 
   a {
     margin: 0 7px;
+  }
+  @media (max-width: 600px) {
+    left: calc(50% - 138px);
   }
 }
 

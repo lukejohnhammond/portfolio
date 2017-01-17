@@ -35,7 +35,7 @@ const workList =
     {
       'title': 'Van Pelt\'s Travel Buddies',
       'shortIntro': 'MEAN stack app',
-      'mainContent': 'Van Pelt’s Travel Buddies MEAN stack app that pulls together like minded adventurers and leaders to participate on the same challenge, allowing the leaders to put together a team and also market their trip through blogging. This app made use of embedded and referenced models, css keyframe animations and a Google Maps Angular directive. My role in this project was primarily focused on the stories (blog section), styling and general blog fixing.',
+      'mainContent': 'Van Pelt’s Travel Buddies is a MEAN stack app that pulls together like minded adventurers and leaders to participate on the same challenge, allowing the leaders to put together a team and also market their trip through blogging. This app made use of embedded and referenced models, css keyframe animations and a Google Maps Angular directive. My role in this project was primarily focused on the stories (blog section), styling and general blog fixing.',
       'heroImage': '/images/project-ss-vanpelt@3x.png',
       'gitHub': 'https://github.com/Smodger/WDI_23_Project3',
       'liveLink': 'http://wdi-go-app.herokuapp.com/'
