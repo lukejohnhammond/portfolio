@@ -4,7 +4,7 @@
   position: static;
   top: -9999px;
   right: -9999px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
       display: none;
   }
 }
@@ -31,7 +31,7 @@
   left: -100vw;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   #blog:checked ~ .holder,
   #home:checked ~ .holder,
   #about:checked ~ .holder,
@@ -50,7 +50,7 @@ label[class^="nav"] {
   text-transform: lowercase;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   label[class^="nav"] {
     display: none;
   }
