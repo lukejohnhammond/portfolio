@@ -9,9 +9,8 @@ function ImageUploaderController(Image) {
 
   function addImage() {
     console.log(Upload.data);
-    Image.save(Upload, (data) => {
-      // $state.go('images', {id: data._id});
-      console.log(data, 'saved');
+    Image.save(Upload, () => {
+      Upload.image = {};
     });
   }
 

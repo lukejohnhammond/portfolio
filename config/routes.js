@@ -8,6 +8,8 @@ const blogsController = require('../controllers/blogsController');
 const worksController = require('../controllers/worksController');
 const imagesController = require('../controllers/imagesController');
 
+const imageUpload = require('../lib/imageUpload');
+
 // middleware
 
 function secureRoute(req, res, next) {
@@ -51,12 +53,12 @@ router.route('/api/works/:id')
 
 router.route('/api/images')
   .get(imagesController.index)
-  .post(secureRoute, imagesController.create);
+  .post(secureRoute, imageUpload, imagesController.create);
 
 router.route('/api/images/:id')
   .get(imagesController.show)
-  .put(secureRoute, imagesController.update)
-  .patch(secureRoute, imagesController.update)
+  // .put(secureRoute, imagesController.update)
+  // .patch(secureRoute, imagesController.update)
   .delete(secureRoute, imagesController.delete);
 
 module.exports = router;

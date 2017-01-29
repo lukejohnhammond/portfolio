@@ -10,7 +10,13 @@ function imagesIndex(req, res) {
 }
 
 function imagesCreate(req, res) {
-  console.log(req.body.image);
+  console.log(req.file, req.body.image);
+  if(req.file) req.body.image.src = req.file;
+
+  // for(const key in req.body) {
+  //   image[key] = req.body[key];
+  // } //
+
   Image.create(req.body.image, (err, image) => {
     if (err) return res.status(500).json({ success: false, message: err });
     if (!image) return res.status(500).json({ sucess: false, message: 'Please send the correct information to create a image entry'});
