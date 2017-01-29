@@ -1,5 +1,5 @@
 
-<article ng-repeat="article in worksIndex.works">
+<article ng-repeat="project in worksIndex.works">
   {{ article}}
   <h2>{{ article.title }} - <small>{{ article.createdAt }}</small></h2>
   <a ui-sref="workShow({ id: article._id })">View</a>

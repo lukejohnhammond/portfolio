@@ -4,6 +4,9 @@
   position: static;
   top: -9999px;
   right: -9999px;
+  @media screen and (max-width: 1024px) {
+      display: none;
+  }
 }
 
 // inputs
@@ -28,6 +31,15 @@
   left: -100vw;
 }
 
+@media screen and (max-width: 1024px) {
+  #blog:checked ~ .holder,
+  #home:checked ~ .holder,
+  #about:checked ~ .holder,
+  #work:checked ~ .holder {
+    top: 0;
+    left: 0;
+  }
+}
 
 // labels
 
@@ -36,6 +48,12 @@ label[class^="nav"] {
   font-size: 20px;
   line-height: 40px;
   text-transform: lowercase;
+}
+
+@media screen and (max-width: 1024px) {
+  label[class^="nav"] {
+    display: none;
+  }
 }
 
 .navUp {

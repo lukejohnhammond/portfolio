@@ -1,5 +1,10 @@
-<article ng-repeat="article in worksIndex.works" class="project">
-  <h2>{{ article.title }}</h2>
-  <img ng-src="{{ article.heroImage.src }}" alt="{{ article.heroImage.caption }}" />
-  <a ui-sref="workShow({ id: article._id })">View</a>
+
+<h1>My Work</h1>
+
+<article ng-repeat="project in worksIndex.works" class="project">
+  <a ui-sref="workShow({ id: project._id })">
+    <h2>{{ project.title }}</h2>
+    <img ng-src="{{ project.heroImage }}" alt="{{ project.heroImage.caption }}" />
+    <p>View</p>
+  </a>
 </article>
