@@ -10,6 +10,8 @@ const imagesController = require('../controllers/imagesController');
 
 const imageUpload = require('../lib/imageUpload');
 
+const registerRoute = process.env.REGROUTE || '/register';
+
 // middleware
 
 function secureRoute(req, res, next) {
@@ -25,7 +27,7 @@ function secureRoute(req, res, next) {
   });
 }
 
-router.route('/register')
+router.route(registerRoute)
   .post(authController.register);
 
 router.route('/auth/login')
