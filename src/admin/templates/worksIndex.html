@@ -1,9 +1,9 @@
 
 <article ng-repeat="project in worksIndex.works">
-  {{ article}}
-  <h2>{{ article.title }} - <small>{{ article.createdAt }}</small></h2>
-  <a ui-sref="workShow({ id: article._id })">View</a>
-  <a ui-sref="workEdit({ id: article._id })">Edit Work</a>
+  {{ project }}
+  <h2>{{ project.title }} - <small>{{ project.createdAt }}</small></h2>
+  <a ui-sref="workShow({ id: project._id })">View </a>
+  <a ui-sref="workEdit({ id: project._id })">Edit Work</a>
 </article>
 
 <a ui-sref="workCreate">Add new</a>

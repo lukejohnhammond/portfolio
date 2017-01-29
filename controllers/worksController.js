@@ -22,6 +22,7 @@ function worksCreate(req, res) {
 function worksShow(req, res) {
   Work.findById(req.params.id, (err, work) => {
     if(err) res.status(500).json({ error: err });
+    console.log(work);
     res.json(work);
   });
 }
