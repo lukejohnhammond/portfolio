@@ -1,4 +1,6 @@
 
-<div class="dragDrop" style="width:100px; height:100px; background-color: #000" ng-class="{ active: active }">
-  <img ng-src="{{ base64 }}" >
+<div class="dragDrop" style="width:100%; height:400px; background-color: #ccc" ng-class="{ active: active }">
+  <p ng-if="!image && !error">Drop image here</p>
+  <img ng-if="image && !error" ng-src="{{ image }}" >
+  <p ng-if="error">{{ error }}</p>
 </div>

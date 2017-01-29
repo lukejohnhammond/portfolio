@@ -13,22 +13,26 @@ function dragdrop() {
     link($scope, element) {
 
       $scope.base64 = null;
+      $scope.error = null;
       $scope.active = false;
+
+      $scope.$watchGroup(['base64', 'src'], () => {
+        $scope.image = $scope.base64 || $scope.src;
+      });
 
       reader.onload = () => {
         $scope.base64 = reader.result;
-        console.log(reader.result);
         $scope.$apply();
       };
 
       element
         .on('dragover', () => {
+          $scope.error = null;
           $scope.active = true;
           $scope.$apply();
         })
         .on('dragover', (e) => {
           e.preventDefault();
-          console.log('AGR');
         })
         .on('dragleave', () => {
           $scope.active = false;
@@ -39,6 +43,12 @@ function dragdrop() {
           console.log('dropped');
 
           const files = (e.target.files || e.dataTransfer.files)[0];
+
+          if(files.size > 40000) {
+            $scope.error = 'File is too large';
+            $scope.$apply();
+            return;
+          }
 
           reader.readAsDataURL(files);
         });

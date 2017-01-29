@@ -6,6 +6,7 @@ const jwt       = require('jsonwebtoken');
 const authController = require('../controllers/authController');
 const blogsController = require('../controllers/blogsController');
 const worksController = require('../controllers/worksController');
+const imagesController = require('../controllers/imagesController');
 
 // middleware
 
@@ -47,5 +48,15 @@ router.route('/api/works/:id')
   .put(secureRoute, worksController.update)
   .patch(secureRoute, worksController.update)
   .delete(secureRoute, worksController.delete);
+
+router.route('/api/images')
+  .get(imagesController.index)
+  .post(secureRoute, imagesController.create);
+
+router.route('/api/images/:id')
+  .get(imagesController.show)
+  .put(secureRoute, imagesController.update)
+  .patch(secureRoute, imagesController.update)
+  .delete(secureRoute, imagesController.delete);
 
 module.exports = router;
