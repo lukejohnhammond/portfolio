@@ -100,3 +100,10 @@ function Router($stateProvider, $urlRouterProvider) {
     });
   $urlRouterProvider.otherwise('/');
 }
+
+Auth.$inject = ['$authProvider'];
+function Auth($authProvider) {
+  $authProvider.tokenPrefix = '';
+  $authProvider.loginUrl = '/login';
+  $authProvider.signupUrl = '/register';
+}
