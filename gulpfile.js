@@ -34,7 +34,7 @@ gulp.task('bower:css', () => {
     .pipe(concat('vendor.css'))
     .pipe(plumber())
     .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(gulp.dest('public/css'));
+    .pipe(gulp.dest('public/admin/css'));
 });
 
 // scripts
@@ -92,6 +92,19 @@ gulp.task('styles', () => {
     .pipe(livereload());
 });
 
+// styles
+gulp.task('adminStyles', () => {
+  return gulp.src('src/admin/scss/admin.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+		.pipe(cleanCSS({ compatibility: 'ie8'}))
+    .pipe(plumber())
+    .pipe(flatten())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('public/admin/css/'))
+    .pipe(livereload());
+});
+
 // images
 gulp.task('images', () => {
   return gulp.src(['src/images/*.jpg', 'src/images/*.png', 'src/images/*.gif', 'src/images/*.svg'])
@@ -132,7 +145,8 @@ gulp.task('watch', () => {
   gulp.watch('src/**/*.js', ['scripts']);
   gulp.watch('src/admin/**/*.js', ['adminScripts']);
   gulp.watch('src/**/*.scss', ['styles']);
+  gulp.watch('src/admin/**/*.scss', ['adminStyles']);
   gulp.watch('src/**/*.jsx', ['jsx']);
 });
 
-gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'adminScripts', 'styles', 'html', 'adminHtml', 'images'], 'watch', 'nodemon'));
+gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'adminScripts', 'styles', 'adminStyles', 'html', 'adminHtml', 'images'], 'watch', 'nodemon'));

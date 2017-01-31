@@ -1,0 +1,51 @@
+body {
+  min-height: 100%;
+  width: 100%;
+
+  position: absolute;
+
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+  min-height: 100%;
+  width: 80%;
+  max-width: 920px;
+
+  position: absolute;
+    top: 0px;
+}
+
+section.login {
+  height: 30%;
+  width: 30%;
+}
+
+.formHolder {
+  margin: 0 0 5px 0;
+
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+  label {
+    width : 30%;
+
+    display: block;
+    float: left;
+  }
+  input {
+    width: 60%;
+    display: block;
+    float: right;
+  }
+
+  &.submit {
+    input {
+      width: 100%;
+    }
+  }
+}

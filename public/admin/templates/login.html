@@ -1,9 +1,15 @@
-<section>
+<section class="login">
     <form id="login" ng-submit="login.submit()">
-      <label for="email">Email:</label>
-      <input type="text" name="email" id="email" value="" ng-model="login.credentials.email">
-      <label for="password">Password:</label>
-      <input type="text" name="password" id="password" value="" ng-model="login.credentials.password">
-      <input type="submit" name="" value="Login">
+      <div class="formHolder">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" value="" ng-model="login.credentials.email">
+      </div>
+      <div class="formHolder">
+        <label for="password">Password:</label>
+        <input type="text" name="password" type="password" id="password" value="" ng-model="login.credentials.password">
+      </div>
+      <div class="formHolder submit">
+        <input type="submit" name="" value="Login">
+      </div>
     </form>
 </section>

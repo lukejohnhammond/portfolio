@@ -1,0 +1,2 @@
+body,section{min-height:100%;position:absolute}body{width:100%;display:flex;align-items:center;justify-content:center}section{width:80%;max-width:920px;top:0}section.login{height:30%;width:30%}.formHolder{margin:0 0 5px}.formHolder:after{content:'';clear:both;display:block}.formHolder label{width:30%;display:block;float:left}.formHolder input{width:60%;display:block;float:right}.formHolder.submit input{width:100%}
+/*# sourceMappingURL=admin.css.map */
