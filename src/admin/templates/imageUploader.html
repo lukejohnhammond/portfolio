@@ -1,20 +1,22 @@
-<h1>Image Uploader</h1>
+<section>
+  <h1>Image Uploader</h1>
 
-{{ imageUploader.image }}
-<form novalidate ng-submit="imageUploader.addImage()">
-  <div class="formHolder">
-    <label>Image:</label>
-    <dragdrop base64="imageUploader.image.base64" src="imageUploader.image.image"></dragdrop>
-  </div>
-  <div class="formHolder">
-    <label for="caption">Caption:</label>
-    <input type="text" name="caption" ng-model="imageUploader.image.caption" />
-  </div>
-  <div class="formHolder">
-    <label for="type">Type:</label>
-    <input type="text" name="type" ng-model="imageUploader.image.type" />
-  </div>
-  <div class="formHolder">
-    <input type="submit" value="submit" />
-  </div>
-</form>
+  {{ imageUploader.image }}
+  <form novalidate ng-submit="imageUploader.addImage()">
+    <div class="formHolder">
+      <label>Image:</label>
+      <dragdrop base64="imageUploader.image.base64" src="imageUploader.image.image"></dragdrop>
+    </div>
+    <div class="formHolder">
+      <label for="caption">Caption:</label>
+      <input type="text" name="caption" ng-model="imageUploader.image.caption" />
+    </div>
+    <div class="formHolder">
+      <label for="type">Type:</label>
+      <input type="text" name="type" ng-model="imageUploader.image.type" />
+    </div>
+    <div class="formHolder">
+      <input type="submit" value="submit" />
+    </div>
+  </form>
+</section>

@@ -1,9 +1,12 @@
-
-<article ng-repeat="project in worksIndex.works">
-  {{ project }}
-  <h2>{{ project.title }} - <small>{{ project.createdAt }}</small></h2>
-  <a ui-sref="workShow({ id: project._id })">View </a>
-  <a ui-sref="workEdit({ id: project._id })">Edit Work</a>
-</article>
-
-<a ui-sref="workCreate">Add new</a>
+<section>
+  <h1>Work List</h1>
+  <article ng-repeat="project in worksIndex.works">
+    <h2>{{ project.title }} <small>{{ project.createdAt | date : 'dd MMM yyyy, HH:mm' }}</small></h2>
+    <p>{{ project.shortIntro }}</p>
+    <a ui-sref="workShow({ id: project._id })" class="btn btn-primary">View </a>
+    <a ui-sref="workEdit({ id: project._id })" class="btn btn-primary">Edit Work</a>
+  </article>
+  <div class="sectionOptions">
+    <a ui-sref="workCreate" class="btn btn-success">Add new</a>
+  </div>
+</section>

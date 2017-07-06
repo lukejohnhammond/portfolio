@@ -15,12 +15,35 @@ section {
   max-width: 920px;
 
   position: absolute;
-    top: 0px;
+    top: 30px;
+
+  &.login {
+    height: 30%;
+    width: 30%;
+  }
+
+  .sectionOptions {
+    margin: 20px 0;
+
+    clear: both;
+  }
 }
 
-section.login {
-  height: 30%;
-  width: 30%;
+article {
+  width: 100%;
+  padding: 20px 0;
+
+  border-bottom: 1px solid #ccc;
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 1.2em;
+    
+    small {
+      float: right;
+      line-height: 30px;
+    }
+  }
 }
 
 .formHolder {
